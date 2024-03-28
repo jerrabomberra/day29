@@ -22,10 +22,13 @@ def add():
 
 def generate_password():
     global password
+    password_entry.delete(0, END)
     password = []
     for i in range(4):
         password += random.choice(string.ascii_letters)
+    for i in range(4):
         password += random.choice(string.digits)
+    for i in range(4):
         password += random.choice(string.punctuation)
 
     random.shuffle(password)
